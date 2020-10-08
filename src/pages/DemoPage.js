@@ -24,6 +24,7 @@ const DemoPage = () => {
 
   const schema = [
     { label: 'Username', accessor: 'username'},
+    { label: 'Email', accessor: 'email'},
     { label: 'Enabled', accessor: 'enabled', input: 'checkbox'},
   ]
 

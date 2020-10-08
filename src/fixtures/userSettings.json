@@ -2,11 +2,13 @@
   {
     "id": 1,
     "username": "karengallego",
-    "enabled": true
+    "enabled": true,
+    "email": "kgallego@example.com"
   },
   {
     "id": 2,
     "username": "lucasg",
-    "enabled": false
+    "enabled": false,
+    "email": "lucasg@example.com"
   }
 ]

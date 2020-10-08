@@ -13,25 +13,26 @@ const Table = (props) => {
 
   useEffect(() => {console.log({screens});}, [])
 
-  const generateCell = (cell, item) => {
+  const cellFactory = (cell, item) => {
     const {accessor} = item;
-    if (item.input === 'checkbox') {
-      return <input
-        type="checkbox"
-        value={cell.row[accessor]}
-        checked={cell.row[accessor]}
-        onChange={(event) => {
-          handleAction(cell.original.id, accessor, event.target.checked);
-        }}/>
+    switch (item.input) {
+      case 'checkbox':
+        return <input
+          type="checkbox"
+          value={cell.row[accessor]}
+          checked={cell.row[accessor]}
+          onChange={(event) => {
+            handleAction(cell.original.id, accessor, event.target.checked);
+          }}/>;
+      default:
+        return <span>{cell.row[accessor]}</span>
     }
-
-    return <span>{cell.row[accessor]}</span>
   };
 
   const columns = schema.map((item) => ({
     Header: item.label,
     accessor: item.accessor,
-    Cell: (cell) => generateCell(cell, item)
+    Cell: (cell) => cellFactory(cell, item)
   }))
 
   return (
