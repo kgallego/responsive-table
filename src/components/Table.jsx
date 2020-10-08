@@ -7,8 +7,7 @@ import CellFactory from "./CellFactory";
 
 const { useBreakpoint } = Grid;
 
-const Table = (props) => {
-  const { data, schema, handleAction } = props;
+const Table = ({ data, schema, handleAction }) => {
 
   const screens = useBreakpoint();
 

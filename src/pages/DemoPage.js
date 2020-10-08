@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import Table from "../components/Table";
+import ResponsiveTable from "../components/ResponsiveTable";
 import fixture from "../fixtures/userSettings.json"
 
 const DemoPage = () => {
@@ -23,11 +23,11 @@ const DemoPage = () => {
   }
 
   const schema = [
-    { label: 'Username', accessor: 'username'},
-    { label: 'Email', accessor: 'email'},
-    { label: 'Enabled', accessor: 'enabled', input: 'checkbox'},
-    { label: 'Enabled2', accessor: 'enabled2', input: 'checkbox'},
-    { label: 'Enabled3', accessor: 'enabled3', input: 'checkbox'},
+    {label: 'Username', accessor: 'username'},
+    {label: 'Email', accessor: 'email'},
+    {label: 'Enabled', accessor: 'enabled', input: 'checkbox'},
+    {label: 'Enabled2', accessor: 'enabled2', input: 'checkbox'},
+    {label: 'Enabled3', accessor: 'enabled3', input: 'checkbox'},
   ]
 
   const handleAction = (id, key, value) => {
@@ -36,12 +36,12 @@ const DemoPage = () => {
   }
   return (
     <div>
-        <h1>Demo Page!</h1>
-        <Table
-          data={data}
-          schema={schema}
-          handleAction={handleAction}
-        />
+      <h1>Demo Page!</h1>
+      <ResponsiveTable
+        data={data}
+        schema={schema}
+        handleAction={handleAction}
+      />
     </div>
   )
 };
