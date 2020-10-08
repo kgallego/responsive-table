@@ -26,6 +26,8 @@ const DemoPage = () => {
     { label: 'Username', accessor: 'username'},
     { label: 'Email', accessor: 'email'},
     { label: 'Enabled', accessor: 'enabled', input: 'checkbox'},
+    { label: 'Enabled2', accessor: 'enabled2', input: 'checkbox'},
+    { label: 'Enabled3', accessor: 'enabled3', input: 'checkbox'},
   ]
 
   const handleAction = (id, key, value) => {
