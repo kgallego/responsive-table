@@ -3,6 +3,7 @@ import ReactTable from 'react-table-v6';
 import 'react-table-v6/react-table.css';
 
 import { Grid } from 'antd';
+import CellFactory from "./CellFactory";
 
 const { useBreakpoint } = Grid;
 
@@ -13,26 +14,10 @@ const Table = (props) => {
 
   useEffect(() => {console.log({screens});}, [])
 
-  const cellFactory = (cell, item) => {
-    const {accessor} = item;
-    switch (item.input) {
-      case 'checkbox':
-        return <input
-          type="checkbox"
-          value={cell.row[accessor]}
-          checked={cell.row[accessor]}
-          onChange={(event) => {
-            handleAction(cell.original.id, accessor, event.target.checked);
-          }}/>;
-      default:
-        return <span>{cell.row[accessor]}</span>
-    }
-  };
-
   const columns = schema.map((item) => ({
     Header: item.label,
     accessor: item.accessor,
-    Cell: (cell) => cellFactory(cell, item)
+    Cell: (cell) => <CellFactory item={item} cell={cell} handleAction={handleAction} />
   }))
 
   return (
