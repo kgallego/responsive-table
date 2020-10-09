@@ -14,5 +14,29 @@
     "enabled": false,
     "enabled2": false,
     "enabled3": false
+  },
+  {
+    "id": 3,
+    "username": "justinb",
+    "email": "justinb@example.com",
+    "enabled": false,
+    "enabled2": false,
+    "enabled3": true
+  },
+  {
+    "id": 4,
+    "username": "nated",
+    "email": "nated@example.com",
+    "enabled": false,
+    "enabled2": false,
+    "enabled3": false
+  },
+  {
+    "id": 5,
+    "username": "leov",
+    "email": "leov@example.com",
+    "enabled": true,
+    "enabled2": false,
+    "enabled3": false
   }
 ]

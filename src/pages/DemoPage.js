@@ -5,8 +5,6 @@ import fixture from "../fixtures/userSettings.json"
 const DemoPage = () => {
   const [data, setData] = useState(fixture);
 
-  useEffect(() => console.log('demo page rendered!'), [])
-
   // fake api action:
   const update = (id, key, value) => {
     console.log('make api call with: ', id, key, value);
@@ -27,8 +25,8 @@ const DemoPage = () => {
     {label: 'Username', accessor: 'username'},
     {label: 'Email', accessor: 'email'},
     {label: 'Enabled', accessor: 'enabled', input: 'checkbox'},
-    {label: 'Enabled2', accessor: 'enabled2', input: 'checkbox'},
-    {label: 'Enabled3', accessor: 'enabled3', input: 'checkbox'},
+    {label: 'Enabled 2', accessor: 'enabled2', input: 'checkbox'},
+    {label: 'Enabled 3', accessor: 'enabled3', input: 'checkbox'},
   ]
 
   const handleActionFactory = (id, accessor, value) => { // factory based on accessor

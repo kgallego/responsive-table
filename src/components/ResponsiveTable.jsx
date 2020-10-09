@@ -22,7 +22,6 @@ const ResponsiveTable = ({ title, data, schema, handleAction }) => {
     setVisible(true);
   }
 
-  // todo: transform data instead;
   if (!screens.sm) {
     const visibleCols = schema.filter(item => !item.input);
     const responsiveSchema = [
@@ -30,7 +29,6 @@ const ResponsiveTable = ({ title, data, schema, handleAction }) => {
       ...visibleCols
     ]
 
-    console.log({visibleCols});
     return (
       <>
         <Modal
