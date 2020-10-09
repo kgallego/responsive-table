@@ -31,7 +31,7 @@ const DemoPage = () => {
     {label: 'Enabled3', accessor: 'enabled3', input: 'checkbox'},
   ]
 
-  const handleActionFactory = (id, accessor, value) => {
+  const handleActionFactory = (id, accessor, value) => { // factory based on accessor
     update(id, accessor, value);
   }
 
