@@ -1,21 +1,21 @@
 import React from "react";
 import {Button} from "antd";
 
-const CellFactory = ({item, cell, handleAction, handleShowInfo}) => {
-  const {accessor} = item;
-  switch (item.input) {
+const CellFactory = ({schemaItem, value, id, handleAction, handleShowInfo}) => {
+  const {accessor} = schemaItem;
+  switch (schemaItem.input) {
     case 'checkbox':
       return <input
         type="checkbox"
-        value={cell.row[accessor]}
-        checked={cell.row[accessor]}
+        value={value}
+        checked={value}
         onChange={(event) => {
-          handleAction(cell.original.id, accessor, event.target.checked);
+          handleAction(id, accessor, event.target.checked);
         }}/>;
     case 'showInfoButton':
-      return <Button onClick={() => handleShowInfo(cell.original.id, accessor)}>show info</Button>;
+      return <Button onClick={() => handleShowInfo(id, accessor)}>show info</Button>;
     default:
-      return <span>{cell.row[accessor]}</span>
+      return <span>{value}</span>
   }
 };
 

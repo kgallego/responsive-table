@@ -9,8 +9,9 @@ const Table = ({data, schema, handleAction, handleShowInfo}) => {
     Header: item.label,
     accessor: item.accessor,
     Cell: (cell) => <CellFactory
-      item={item}
-      cell={cell}
+      schemaItem={item}
+      value={cell.row[item.accessor]}
+      id={cell.original.id}
       handleAction={handleAction}
       handleShowInfo={handleShowInfo}
     />
