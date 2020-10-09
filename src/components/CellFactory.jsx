@@ -13,7 +13,7 @@ const CellFactory = ({schemaItem, value, id, handleAction, handleShowInfo}) => {
           handleAction(id, accessor, event.target.checked);
         }}/>;
     case 'showInfoButton':
-      return <Button onClick={() => handleShowInfo(id, accessor)}>show info</Button>;
+      return <Button onClick={() => handleShowInfo(id)}>show info</Button>;
     default:
       return <span>{value}</span>
   }

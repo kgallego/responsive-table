@@ -1,7 +1,7 @@
 import React from "react";
 import CellFactory from "./CellFactory";
 
-const List = ({ data, schema }) => {
+const List = ({ data, schema, handleAction }) => {
 
   const formItem = (schemaItem, accessorValue) => {
     return (
@@ -11,7 +11,7 @@ const List = ({ data, schema }) => {
           schemaItem={schemaItem}
           value={accessorValue}
           id={data.id} // not necessary
-          handleAction={() => {}}
+          handleAction={handleAction}
         />
       </div>
     )

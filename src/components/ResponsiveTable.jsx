@@ -7,10 +7,12 @@ import Modal from "./Modal";
 const { useBreakpoint } = Grid;
 
 const ResponsiveTable = ({ title, data, schema, handleAction }) => {
+  const [currentData, setCurrentData] = useState(data[0]);
   const [visible, setVisible] = useState(false);
   const screens = useBreakpoint();
 
-  const handleShowInfo = () => {
+  const handleShowInfo = (id) => {
+    setCurrentData(data.find(item => item.id === id));
     setVisible(true);
   }
 
@@ -31,7 +33,7 @@ const ResponsiveTable = ({ title, data, schema, handleAction }) => {
           close={() => setVisible(false)}
         >
           <List // form?
-            data={data[0]} // todo: wag hardcoded boi
+            data={currentData}
             schema={schema}
             handleAction={handleAction}
           />
