@@ -4,11 +4,16 @@ import 'react-table-v6/react-table.css';
 
 import CellFactory from "./CellFactory";
 
-const Table = ({data, schema, handleAction}) => {
+const Table = ({data, schema, handleAction, handleShowInfo}) => {
   const columns = schema.map((item) => ({
     Header: item.label,
     accessor: item.accessor,
-    Cell: (cell) => <CellFactory item={item} cell={cell} handleAction={handleAction}/>
+    Cell: (cell) => <CellFactory
+      item={item}
+      cell={cell}
+      handleAction={handleAction}
+      handleShowInfo={handleShowInfo}
+    />
   }))
 
   return (

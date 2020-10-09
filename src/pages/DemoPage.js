@@ -7,6 +7,7 @@ const DemoPage = () => {
 
   useEffect(() => console.log('demo page rendered!'), [])
 
+  // fake api action:
   const update = (id, key, value) => {
     console.log('make api call with: ', id, key, value);
     setData(prev => {
@@ -30,17 +31,17 @@ const DemoPage = () => {
     {label: 'Enabled3', accessor: 'enabled3', input: 'checkbox'},
   ]
 
-  const handleAction = (id, key, value) => {
-    // fake api action:
-    update(id, key, value);
+  const handleActionFactory = (id, accessor, value) => {
+    update(id, accessor, value);
   }
+
   return (
     <div>
       <h1>Demo Page!</h1>
       <ResponsiveTable
         data={data}
         schema={schema}
-        handleAction={handleAction}
+        handleAction={handleActionFactory}
       />
     </div>
   )
