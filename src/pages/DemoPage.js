@@ -38,6 +38,7 @@ const DemoPage = () => {
   return (
     <div>
       <ResponsiveTable
+        title='User Settings'
         data={data}
         schema={schema}
         handleAction={handleActionFactory}

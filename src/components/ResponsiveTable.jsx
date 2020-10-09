@@ -6,7 +6,7 @@ import Modal from "./Modal";
 
 const { useBreakpoint } = Grid;
 
-const ResponsiveTable = ({ data, schema, handleAction }) => {
+const ResponsiveTable = ({ title, data, schema, handleAction }) => {
   const [visible, setVisible] = useState(false);
   const screens = useBreakpoint();
 
@@ -15,7 +15,7 @@ const ResponsiveTable = ({ data, schema, handleAction }) => {
   }
 
   // todo: transform data instead;
-  if (!screens.md) {
+  if (!screens.sm) {
     const visibleCols = schema.filter(item => !item.input);
     const responsiveSchema = [
       {label: '', accessor: 'showInfo', input: 'showInfoButton'},
@@ -26,14 +26,14 @@ const ResponsiveTable = ({ data, schema, handleAction }) => {
     return (
       <>
         <Modal
-          title="Basic Modal"
+          title={title}
           visible={visible}
           close={() => setVisible(false)}
         >
           <List // form?
-            // data={data}
-            // schema={schema}
-            // handleAction={handleAction}
+            data={data[0]} // todo: wag hardcoded boi
+            schema={schema}
+            handleAction={handleAction}
           />
         </Modal>
         <Table

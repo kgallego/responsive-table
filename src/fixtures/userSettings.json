@@ -2,17 +2,17 @@
   {
     "id": 1,
     "username": "karengallego",
+    "email": "kgallego@example.com",
     "enabled": true,
     "enabled2": false,
-    "enabled3": true,
-    "email": "kgallego@example.com"
+    "enabled3": true
   },
   {
     "id": 2,
     "username": "lucasg",
+    "email": "lucasg@example.com",
     "enabled": false,
     "enabled2": false,
-    "enabled3": false,
-    "email": "lucasg@example.com"
+    "enabled3": false
   }
 ]
