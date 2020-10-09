@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import Table from "./Table";
-import {Grid, Modal} from 'antd';
+import {Grid} from 'antd';
 import List from "./List";
+import Modal from "./Modal";
 
 const { useBreakpoint } = Grid;
 
@@ -27,9 +28,8 @@ const ResponsiveTable = ({ data, schema, handleAction }) => {
         <Modal
           title="Basic Modal"
           visible={visible}
-          onOk={() => setVisible(false)}
+          close={() => setVisible(false)}
         >
-          <p>Some contents...</p>
           <List // form?
             // data={data}
             // schema={schema}
